@@ -1,0 +1,11 @@
+.AccueilIMG{
+display: flex;
+width: 75%;
+height: 15vw;
+top: 163px;
+left: 100px;
+border-radius: 2vw;
+opacity: 0.3px;
+object-fit: cover; 
+margin: auto;
+}

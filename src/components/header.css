@@ -1,0 +1,25 @@
+.header{
+    padding: 2% 8%;
+    margin-top: 150px;
+    max-width: 90%;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+}
+
+.header img{
+width: 20%;
+}
+
+.header .liens{
+    display: flex;
+    font-size: 2vw;
+}
+
+.header .liens p{
+    color:#FF6060;
+   margin-left: 30px;
+}
