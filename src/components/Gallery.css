@@ -1,0 +1,45 @@
+.gallery {
+  padding: 20px;
+  box-sizing: border-box;
+  gap: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: rgb(226, 226, 226);
+  margin: auto;
+  margin-top: 25px;
+  scroll-behavior: auto;
+  width: 75%;
+  height: 80vh;
+  overflow-y: auto;
+  border-radius: 10px;
+}
+
+.gallery .appart {
+  position: relative;
+  background-color: #ff6060;
+  padding: 5px;
+  border-radius: 10px;
+  height: 100%;
+}
+
+.gallery .appart img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 10px 10px;
+
+  position: relative;
+}
+
+.gallery .appart p {
+  position: absolute;
+  z-index: 3;
+  bottom: -8px;
+  background: linear-gradient(to top, #0b0b0b, transparent);
+  width: 96%;
+  height: 60px;
+  font-weight: bold;
+  color: white;
+  font-size: 1.1vw;
+  border-radius: 0px 0px 10px 10px;
+}
+

@@ -1,12 +1,38 @@
-
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Gallery.css';
+
 const Gallery = () => {
-    return (
-        <div className='gallery'>
-            Gallerie
-        </div>
-    );
+  const [appartements, setAppartements] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:8080/api/properties")
+      .then(response => response.json())
+      .then(data => {
+        if (data) {
+          setAppartements(data);
+        } else {
+          alert("Aucun tableau n'est retourné en reponse.");
+        }
+      })
+      .catch(error => console.error("Erreur lors de la requête :", error));
+  }, []);
+
+  return (
+    <div className='gallery'>
+     
+        {appartements.map(appartement => (
+          <div className='appart'>   
+          <img src={appartement.cover}></img>
+          <p key={appartement.id}>{appartement.title}</p>
+          </div>
+        ))}
+     
+     
+          
+     
+     
+    </div>
+  );
 };
 
 export default Gallery;
