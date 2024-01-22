@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+#carousel {
+  width: 75vw;
+  height: 30vw;
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+  /* background-color: rgb(231, 18, 18); */
+  border-radius: 15px;
+}
+
+#carousel-images {
+  width: 75vw;
+  height: 30vw;
+  /*  */
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  margin: auto;
+}
+#carousel-images .divimages {
+  width: 75vw;
+  height: 33vw;
+  /* object-fit: cover; */
+  transition: transform 0.3s ease-in-out;
+  /* transform: translate( -75vw); */
+}
+
+#carousel-images .divimages .images {
+  width: 75vw;
+  height: 30vw;
+  object-fit: cover;
+}
+
+.carousel-buttons {
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+  top: -20vw;
+  width: 75vw;
+  height: 70px;
+  /* margin: auto; */
+  /* background-color: blueviolet; */
+}
+
+.carousel-buttons button {
+  background-color: transparent;
+  border: none;
+  font-weight: bolder;
+  width: 10vw;
+  height: 20vh;
+}
+.carousel-buttons button img {
+  width: 30%;
+  cursor: pointer;
+}
+#carousel .carousel-indicateur {
+  /* background-color: brown; */
+  position: absolute;
+  top: 25vw;
+  text-align: center;
+  margin: auto;
+  width: 100%;
+}
+
+#carousel .carousel-indicateur p {
+  font-size: 1.2rem;
+  color: rgb(255, 255, 255);
+  /* text-shadow:2px 2px rgb(109, 108, 108); */
+}
+
+.descriptions {
+  width: 75vw;
+  height: 4%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #ff6060;
+  /* background-color: rgb(0, 255, 208); */
+  transition: all 0.4s ease-in-out;
+}
+
+.descriptions .host {
+  display: flex;
+  color: #ff6060;
+  justify-content: space-around;
+  /* background-color: #6088ff; */
+}
+
+.descriptions .host img {
+  width: 25%;
+  height: 25%;
+  border-radius: 100%;
+  margin-left: 5px;
+}
+
+.star-filled {
+  color: #ff6060; /* Couleur des étoiles remplies */
+  font-size: 28px;
+}
+
+.star-outline {
+  color: rgb(160, 160, 160); /* Couleur des étoiles vides */
+  font-size: 28px;
+}
+
+.Tag-Rating {
+  width: 75vw;
+  height: 5%;
+  /* background-color: blue; */
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.Tag-Rating #Tag {
+  display: flex;
+}
+
+.Tag-Rating #Tag p {
+  background-color: #ff6060;
+  color: aliceblue;
+  margin-right: 10px;
+  padding: 02px 15px;
+  border-radius: 10px;
+}
+
+.Description-Equipements {
+  width: 75vw;
+  height: 35px;
+  /* background-color: blueviolet; */
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.Description-Equipements {
+  box-sizing: border-box;
+  position: relative;
+  /* background-color: darkorange; */
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.Description-Equipements #Description,
+#Equipements {
+  transition: all 0.4s ease-in-out;
+  width: 45%;
+  position: relative;
+}
+
+.Description-Equipements .label-description {
+  box-sizing: border-box;
+  background-color: #ff6060;
+  width: 100%;
+  padding: 0.5%;
+  color: aliceblue;
+  border-radius: 7px;
+  padding: 1% 3%;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  transition: all 0.4s ease-in-out;
+}
+.Description-Equipements .label-equipements {
+  box-sizing: border-box;
+  background-color: #ff6060;
+  width: 100%;
+  color: aliceblue;
+  border-radius: 7px;
+  padding: 1% 3%;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  transition: all 0.4s ease-in-out;
+}
+.Description-Equipements .label-description img {
+  width: 15px;
+  rotate: -90deg;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+.Description-Equipements .label-equipements img {
+  width: 15px;
+  rotate: -90deg;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+
+.Description-Equipements .contenu-description {
+  box-sizing: border-box;
+  width: 100%;
+  background-color: white;
+  padding: 3%;
+  padding-bottom: 0%;
+  color: #ff6060;
+  font-size: 1.2em;
+  height: 0px;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+}
+
+.Description-Equipements .contenu-equipements {
+  box-sizing: border-box;
+  width: 100%;
+  background-color: white;
+  padding: 3%;
+  padding-top: 0%;
+  color: #ff6060;
+  font-size: 1.2em;
+  height: 0px;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+}

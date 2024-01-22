@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import {Link} from 'react-router-dom';
 import './Gallery.css';
 
 const Gallery = () => {
@@ -18,13 +19,18 @@ const Gallery = () => {
   }, []);
 
   return (
+    
     <div className='gallery'>
      
         {appartements.map(appartement => (
-          <div className='appart'>   
-          <img src={appartement.cover}></img>
-          <p key={appartement.id}>{appartement.title}</p>
+          <Link key={appartement.id} to={`/Details/${appartement.id}`}>
+          <div className='appart'> 
+          
+          <img src={appartement.cover} alt={appartement.title}></img>
+          <p >{appartement.title}</p>
+          
           </div>
+          </Link>
         ))}
      
      
@@ -32,6 +38,7 @@ const Gallery = () => {
      
      
     </div>
+    
   );
 };
 
