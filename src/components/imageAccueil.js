@@ -5,8 +5,11 @@ import './imageAccueil.css'
 
 function ImageAccueil() {
     return (
-        <div>
+        <div className='image-accueil'> 
+            <p>Chez vous, partout et ailleurs</p>
+            
             < img className="AccueilIMG" src={img1} alt="logo-kasa"/>
+      
         </div>
     );
 };

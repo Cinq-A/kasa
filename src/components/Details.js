@@ -1,11 +1,12 @@
 
 import React, { useEffect, useState, useRef } from 'react';
-import { useParams } from 'react-router-dom';
-import Header from './header.js';
-import Footer from './Footer.js';
+import { useParams, useNavigate } from 'react-router-dom';
 import './Details.css';
 import arrowLeft from '../images/arrow_left.png';
 import arrowRight from '../images/arrow_right.png';
+
+
+
 
 const Details = () => {
   const { id } = useParams();
@@ -19,16 +20,26 @@ const Details = () => {
  //les fonctions--------------
 
   function image_suivante() {
+    
     if (num_image_encours < appartements.pictures.length - 1) {
       setNumImageEncours(num_image_encours + 1);
       setTranslate(translate - 75);
+
+    }else{
+      setTranslate(translate * 0);
+      setNumImageEncours(num_image_encours*0);
     }
   }
 
   function image_precedente() {
+   
     if (num_image_encours > 0) {
       setNumImageEncours(num_image_encours - 1);
       setTranslate(translate + 75);
+
+    }else{setNumImageEncours(num_image_encours+(appartements.pictures.length -1))
+      setTranslate(translate -(appartements.pictures.length -1)*75)
+     
     }
   }
 
@@ -37,12 +48,15 @@ function deroulerDescrption(){
  const contenuDescription = document.querySelector('.contenu-description');
  const fleche = document.getElementById('flecheDescription');
 
- if(contenuDescription.style.height =="0px"){
+ if(contenuDescription.style.height ===""){
 
-  contenuDescription.style.height="auto";
+  contenuDescription.style.height="300px";
+  contenuDescription.style.maxHeight="300px";
+
   fleche.style.rotate="90deg";
   } else {
-    contenuDescription.style.height= "0px" ;
+    contenuDescription.style.height= "" ;
+    contenuDescription.style.maxHeight="0px";
     fleche.style.rotate="-90deg";
  }
  
@@ -54,12 +68,14 @@ function deroulerEquipement(){
   const contenuEquipement = document.querySelector('.contenu-equipements');
   const fleche = document.getElementById('flecheEquipement');
   
-  if(contenuEquipement.style.height =="0px"){
+  if(contenuEquipement.style.height ===""){
     
-    contenuEquipement.style.height="auto";
+    contenuEquipement.style.height="300px";
+    contenuEquipement.style.maxHeight="300px";
     fleche.style.rotate="90deg";
    }else{
-    contenuEquipement.style.height= "0px" ;
+    contenuEquipement.style.height= "" ;
+    contenuEquipement.style.maxHeight="0px";
     fleche.style.rotate="-90deg";
   }
   
@@ -75,17 +91,31 @@ function deroulerEquipement(){
     }
   }, [translate]);
 
+  
+  const navigate = useNavigate();
   useEffect(() => {
+    
+    
     fetch(`http://localhost:8080/api/properties/${id}`)
-      .then(response => response.json())
+    .then(response => {
+      if (!response.ok) {
+       
+        navigate('*');
+      }
+      return response.json();
+    })
       .then(data => {
-        if (data) {
-          setAppartements(data);
-        } else {
-          alert("Aucune réponse.");
+      
+        if (data==='Not found'){
+          navigate('*')
         }
+        else  {
+          
+          setAppartements(data);
+        } 
       })
       .catch(error => console.error("Erreur lors de la requête :", error));
+
   }, [id]);
 
 
@@ -128,7 +158,6 @@ function deroulerEquipement(){
       for (let e = 1; e <= 5; e++) {
         const star = document.createElement('span');
         star.textContent='★'
-        // star.classList.add('fa', `fa-star`);
         star.className = e <= rating ? 'star-filled' : 'star-outline';
         ratingContainer.appendChild(star);
       }
@@ -162,17 +191,17 @@ function deroulerEquipement(){
   if (appartements) {
     return (
       <div>
-        <Header />
+       
         <div id="carousel">
           <div id='carousel-images' ref={divImagesRef}>
             {/* Contenu de la div d'images */}
           </div>
           <div className="carousel-buttons">
             <button onClick={image_precedente} className="carousel-prev">
-              <img src={arrowLeft} alt="left"></img>
+              <img onClick={image_precedente} src={arrowLeft} alt="left"></img>
             </button>
             <button onClick={image_suivante} className="carousel-next">
-              <img src={arrowRight} alt="left"></img>
+              <img onClick={image_suivante}  src={arrowRight} alt="left"></img>
             </button>
           </div>
           <div className='carousel-indicateur'>
@@ -186,7 +215,7 @@ function deroulerEquipement(){
                  </div>
                 <div className='host'>
                     <p>{appartements.host.name}</p>
-                    <img src={appartements.host.picture}></img>
+                    <img src={appartements.host.picture} alt='host'></img>
                 </div>
         </section>
         <section className='Tag-Rating'>
@@ -198,14 +227,14 @@ function deroulerEquipement(){
 
                <div id='Description' >
                    <div className='label-description'>Description
-                   <img id="flecheDescription" onClick={deroulerDescrption} src={arrowLeft}></img>
+                   <img id="flecheDescription" onClick={deroulerDescrption} src={arrowLeft} alt='fleche'></img>
                    </div>
                    <div className='contenu-description'>{appartements.description}</div>
                </div>
 
                <div id='Equipements'>
                    <div className='label-equipements'>Equipements
-                   <img id="flecheEquipement" onClick={deroulerEquipement} src={arrowLeft}></img>
+                   <img id="flecheEquipement" onClick={deroulerEquipement} src={arrowLeft} alt='fleche'></img>
                    </div>
                    <div className='contenu-equipements'>
                  <ul>
@@ -223,7 +252,7 @@ function deroulerEquipement(){
                 
         
         
-        <Footer />
+       
       </div>
     );
   }

@@ -1,7 +1,7 @@
 .gallery {
   padding: 20px;
   box-sizing: border-box;
-  gap: 18px;
+  gap: 25px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   background-color: rgb(226, 226, 226);
@@ -16,8 +16,8 @@
 
 .gallery .appart {
   position: relative;
-  background-color: #ff6060;
-  padding: 5px;
+  /* background-color: #ff6060; */
+  /* padding: 5px; */
   border-radius: 10px;
   height: 100%;
 }
@@ -32,13 +32,60 @@
 .gallery .appart p {
   position: absolute;
   z-index: 3;
-  bottom: -5%;
+  bottom: -8%;
   background: linear-gradient(to top, #0b0b0b, transparent);
-  width: 96%;
-  height: 50px;
+  width: 98%;
+  height: 70px;
   font-weight: bold;
-  color: white;
+  color: #000000;
+  text-shadow: 2px 1px 10px aliceblue;
+  padding-left: 2%;
   font-size: 1.1vw;
   border-radius: 0px 0px 10px 10px;
 }
 
+@media (max-width: 576px) {
+  .gallery {
+    padding: 20px;
+    box-sizing: border-box;
+    /* gap: 25px; */
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    background-color: rgb(253, 253, 253);
+    margin: auto;
+    margin-top: 25px;
+
+    width: 100%;
+
+    border-radius: 10px;
+  }
+
+  .gallery .appart p {
+    position: absolute;
+    z-index: 3;
+    bottom: -8%;
+    background: linear-gradient(to top, #0b0b0b, transparent);
+    width: 98%;
+    height: 70px;
+    font-weight: bold;
+    color: #000000;
+    text-shadow: 3px -1px 2px aliceblue;
+    padding-left: 2%;
+    font-size: 4vw;
+    border-radius: 0px 0px 10px 10px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+}

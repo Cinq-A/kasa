@@ -41,3 +41,26 @@ width: 15vw;
 .lien[aria-current="page"] {
     text-decoration:underline;  
 }
+
+
+
+@media (max-width: 576px) {
+  .header img {
+    width: 40vw; 
+  }
+
+  .header{
+    padding: 2% 1%;
+   
+}  
+.header .liens{
+  
+  font-size: 4vw;
+  
+}
+.lien {
+ 
+   margin-left: 15px;
+}
+
+}
