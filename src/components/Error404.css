@@ -1,0 +1,57 @@
+
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+
+.page404 .messageError{
+font-family: 'Montserrat', sans-serif;
+   text-align: center;
+}
+
+.page404 .messageError h1{
+font-size: 25vh;
+margin: 0%;
+color: #FF6060;
+
+   
+}
+
+.page404 .messageError p{
+font-size: 3vh;
+margin: 0%;
+color: #FF6060;
+margin: 65px;
+
+}
+
+.page404 .messageError :nth-child(3){
+    cursor: pointer;
+}
+
+
+@media (max-width: 576px) {
+
+  .page404 .messageError h1{
+    font-size: 15vh;
+    font-weight: bold;
+       
+    }
+
+    .page404 .messageError{
+    
+      margin-top: 75px;
+      
+      }
+      .page404 .messageError p:last-child{
+        font-size: 2vh;
+        margin: 0%;
+        color: #FF6060;
+        margin: 65px;
+       
+        
+        }
+        
+
+}
