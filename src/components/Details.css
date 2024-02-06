@@ -15,7 +15,7 @@ body {
 }
 
 #carousel-images {
-  width: 75vw;
+  width: 100vw;
   height: 30vw;
   /*  */
   transition: transform 0.3s ease-in-out;
@@ -23,7 +23,7 @@ body {
   margin: auto;
 }
 #carousel-images .divimages {
-  width: 75vw;
+  width: 100vw;
   height: 33vw;
   /* object-fit: cover; */
   transition: transform 0.3s ease-in-out;
@@ -31,7 +31,7 @@ body {
 }
 
 #carousel-images .divimages .images {
-  width: 75vw;
+  width: 100vw;
   height: 30vw;
   object-fit: cover;
 }
@@ -224,7 +224,7 @@ body {
 }
 @media (max-width: 576px) {
   #carousel {
-    width: 75vw;
+    width: 90vw;
     height: 60vw;
     position: relative;
     overflow: hidden;
@@ -234,7 +234,7 @@ body {
   }
   
 #carousel-images {
-    width: 100%;
+    width: 100vw;
     height: 100%;
   
     transition: transform 0.3s ease-in-out;
@@ -243,14 +243,14 @@ body {
 
       
  #carousel-images .divimages {
-  width: 100%;
+  width: 100vw;
   height: 100%;
  
   transition: transform 0.3s ease-in-out;
  
 }
 #carousel-images .divimages .images {
-  width: 75vw;
+  width: 100vw;
   height: 100%;
   object-fit: cover;
 }
@@ -258,14 +258,13 @@ body {
 
 .carousel-buttons {
   position: relative;
-
   display: flex;
   justify-content: space-between;
   margin-top: -20vw;
   
-  width: 75vw;
+  width: 90vw;
   height: 70px;
-  /* margin: auto; */
+
   
 }
 
@@ -284,7 +283,7 @@ body {
   
 }
 #carousel .carousel-indicateur {
-  /* background-color: brown; */
+
   position: absolute;
   top: 50vw;
   text-align: center;
@@ -295,7 +294,117 @@ body {
 #carousel .carousel-indicateur p {
   font-size: 1.2rem;
   color: rgb(255, 255, 255);
-  /* text-shadow:2px 2px rgb(109, 108, 108); */
+  
 }
+
+
+.descriptions {
+  width: 90vw;
+  height: 4%;
+  margin: auto;
+  font-size: 3.5vw;
+  line-height: 6vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #ff6060;
+  transition: all 0.4s ease-in-out;
+}
+
+.descriptions .host {
+  display: flex;
+  color: #ff6060;
+  position: absolute;
+  margin-top: 48%;
+  right: 3%;
+  align-items: center;
+  width:  40%;
+}
+
+.descriptions .host img {
+  width: 28%;
+  height: 25%;
+  border-radius: 100%;
+ 
+}
+
+.star-filled {
+  color: #ff6060; /* Couleur des étoiles remplies */
+  font-size: 28px;
+}
+
+.star-outline {
+  color: rgb(160, 160, 160); /* Couleur des étoiles vides */
+  font-size: 28px;
+}
+
+.Tag-Rating {
+  width: 90vw;
+  height: 5%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10%;
+}
+.Tag-Rating #Tag {
+  display: flex;
+  position: absolute;
+  margin-top: -4%;
+  
+}
+.Tag-Rating #Rating{
+  margin-top: 8%;
+
+}
+
+.Tag-Rating #Tag p {
+  background-color: #ff6060;
+  color: aliceblue;
+  margin-right: 10px;
+  padding: 02px 15px;
+  border-radius: 10px;
+  font-size: 2.8vw;
+}
+
+.Description-Equipements {
+  width: 90vw;
+  height: 35px;
+ box-sizing: border-box;
+  margin: auto;
+  display: block;
+  justify-content: space-between;
+  position: relative; 
+  height: auto;
+}
+
+
+
+.Description-Equipements #Description,
+#Equipements {
+
+  width: 100%;
+
+}
+
+
+
+
+.Description-Equipements .contenu-description {
+  margin-bottom: 5%;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

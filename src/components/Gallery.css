@@ -33,11 +33,11 @@
   position: absolute;
   z-index: 3;
   bottom: -8%;
-  background: linear-gradient(to top, #0b0b0b, transparent);
+  background: linear-gradient(to top, #000000, transparent);
   width: 98%;
-  height: 70px;
+  height: 50px;
   font-weight: bold;
-  color: #000000;
+  color: #ffffff;
   text-shadow: 2px 1px 10px aliceblue;
   padding-left: 2%;
   font-size: 1.1vw;
@@ -48,17 +48,18 @@
   .gallery {
     padding: 20px;
     box-sizing: border-box;
-    /* gap: 25px; */
+    
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     background-color: rgb(253, 253, 253);
     margin: auto;
     margin-top: 25px;
-
+    gap: 25px;
     width: 100%;
-
+   
     border-radius: 10px;
   }
+  
 
   .gallery .appart p {
     position: absolute;
@@ -66,7 +67,8 @@
     bottom: -8%;
     background: linear-gradient(to top, #0b0b0b, transparent);
     width: 98%;
-    height: 70px;
+    padding-top: 10px;
+    height: 50px;
     font-weight: bold;
     color: #000000;
     text-shadow: 3px -1px 2px aliceblue;
@@ -75,8 +77,13 @@
     border-radius: 0px 0px 10px 10px;
   }
 
-
-
+  
+  .gallery .appart img {
+    width: 90vw;
+    height: 60vw;
+    border-radius: 10px 10px 10px 10px;
+    position: relative;
+  }
 
 
 

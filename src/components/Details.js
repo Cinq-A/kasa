@@ -23,7 +23,7 @@ const Details = () => {
     
     if (num_image_encours < appartements.pictures.length - 1) {
       setNumImageEncours(num_image_encours + 1);
-      setTranslate(translate - 75);
+      setTranslate(translate - 100);
 
     }else{
       setTranslate(translate * 0);
@@ -35,10 +35,10 @@ const Details = () => {
    
     if (num_image_encours > 0) {
       setNumImageEncours(num_image_encours - 1);
-      setTranslate(translate + 75);
+      setTranslate(translate + 100);
 
     }else{setNumImageEncours(num_image_encours+(appartements.pictures.length -1))
-      setTranslate(translate -(appartements.pictures.length -1)*75)
+      setTranslate(translate -(appartements.pictures.length -1)*100)
      
     }
   }
@@ -91,8 +91,8 @@ function deroulerEquipement(){
     }
   }, [translate]);
 
-  
   const navigate = useNavigate();
+  
   useEffect(() => {
     
     
@@ -116,7 +116,7 @@ function deroulerEquipement(){
       })
       .catch(error => console.error("Erreur lors de la requête :", error));
 
-  }, [id]);
+  }, [id, navigate]);
 
 
 

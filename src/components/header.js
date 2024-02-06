@@ -13,7 +13,7 @@ function Header() {
           Accueil
         </NavLink>
         <NavLink to="/Apropos" className="lien">
-          À Propos
+          A Propos
         </NavLink>
       </div>
     </div>
